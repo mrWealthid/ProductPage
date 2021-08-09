@@ -11,7 +11,8 @@ const Product = () => {
     error: false,
   });
 
-  const url = "https://5e9623dc5b19f10016b5e31f.mockapi.io/api/v1/products/";
+  const url =
+    "https://5e9623dc5b19f10016b5e31f.mockapi.io/api/v1/products/?page=1&limit=9";
 
   let content = null;
   useEffect(() => {
@@ -43,13 +44,15 @@ const Product = () => {
   product.error && (content = <div>There was an error loading data</div>);
 
   return (
-    <div>
-      {product.data
-        ? product.data.map((item) => (
-            <ProductCard key={item.id} item={item} product={product} />
-          ))
-        : content}
-    </div>
+    <>
+      <div className=" flex flex-wrap w-11/12 mt-10 lg:w-10/12 mx-auto justify-center">
+        {product.data
+          ? product.data.map((item) => (
+              <ProductCard key={item.id} item={item} product={product} />
+            ))
+          : content}
+      </div>
+    </>
   );
 };
 

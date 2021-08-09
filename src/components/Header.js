@@ -46,25 +46,14 @@ const Header = () => {
           className="font-Poppins py-2 text-center block text-sm border-b"
           to="/"
         >
-          Home
+          Products
         </NavLink>
 
         <NavLink
           className="font-Poppins py-2 text-center block text-sm border-b"
-          to="/myProduct"
+          to="/about"
         >
           About
-        </NavLink>
-
-        <NavLink
-          className="font-Poppins text-center  block text-sm py-2 border-b"
-          to="/card"
-        >
-          Contact
-        </NavLink>
-
-        <NavLink className="font-Poppins text-center  block" to="/product">
-          Product
         </NavLink>
       </div>
 
@@ -77,16 +66,25 @@ const Header = () => {
   const transitions = useTransition(menu, {
     from: { opacity: 0, translateX: "-100%" },
     enter: { opacity: 1, translateX: "0%" },
-    leave: { opacity: 5, translateX: "-100%" },
+    leave: { opacity: 0, translateX: "-100%" },
   });
 
   return (
-    <div className="flex p-6 justify-between">
-      <div>
-        <h1>Wealth</h1>
+    <div className="flex p-6 items-center justify-between border-b">
+      <div className="font-Poppins ">
+        <h1 className=" font-bold">Wealth</h1>
+        <p className="hidden md:block text-xs">
+          Built with React Router, Tailwind, axios, mock Api, UseParams Hooks &
+          custom Hooks
+        </p>
       </div>
 
-      <div>
+      <div className=" hidden sm:block font-Poppins text-sm space-x-6">
+        <NavLink to="/">Product</NavLink>
+        <NavLink to="/about">About</NavLink>
+      </div>
+
+      <div className="sm:hidden">
         <FaBars onClick={() => setMenu(!menu)} />
       </div>
 
@@ -95,7 +93,7 @@ const Header = () => {
           item && (
             <animated.div
               style={styles}
-              className="we flex flex-col w-full min-h-full space-y-5 items-center absolute left-0 transition duration-1000 ease-linear  z-50 bg-white top-0 border-black border-r-2"
+              className="we flex flex-col w-full min-h-full space-y-5 items-center absolute left-0 z-50 bg-white top-0 border-black border-r-2"
               onClick={() => setMenu(!menu)}
             >
               {menuContent}

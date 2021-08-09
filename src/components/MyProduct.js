@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Loader from "./Loader";
+import { useParams, Link } from "react-router-dom";
 
 const MyProduct = () => {
   const [product, setProduct] = useState({
@@ -10,8 +11,8 @@ const MyProduct = () => {
   });
 
   let content = null;
-
-  const url = "https://5e9623dc5b19f10016b5e31f.mockapi.io/api/v1/products/1";
+  const { id } = useParams();
+  const url = `https://5e9623dc5b19f10016b5e31f.mockapi.io/api/v1/products/${id}`;
 
   useEffect(() => {
     setProduct({
@@ -45,12 +46,31 @@ const MyProduct = () => {
   console.log(product.data);
 
   return (
-    <div>
+    <div className=" flex flex-wrap min-h-screen items-center w-11/12 mt-10 lg:w-10/12 mx-auto justify-center">
       {product.data ? (
-        <div>
-          <h1>{product.data.name}</h1>
-          <h1>{product.data.description}</h1>
-          <img src={product.data.images[0].imageUrl} alt={product.name} />
+        <div className="rounded-lg overflow-hidden mx-2 sm:w-1/3 lg:w-4/12 w-6/12  mb-4 shadow-2xl">
+          <img
+            className="w-full"
+            src={product.data.images[0].imageUrl}
+            alt={product.name}
+          />
+          <div className="font-Poppins text-center mt-2 px-3">
+            <p className="font-bold text-sm text-gray-700">
+              {product.data.name}
+            </p>
+            <p className="text-xs text-gray-700 font-light">
+              {product.data.description}
+            </p>
+            <p className="font-bold text-xs my-2 text-gray-700 text-right">
+              {<span className="mx-2 ">Price: &#8358;</span>}{" "}
+              {product.data.price}
+            </p>
+          </div>
+          <Link to="/">
+            <p className="bg-blue-400 text-center  py-2 text-xs  text-white font-Poppins">
+              Back
+            </p>
+          </Link>
         </div>
       ) : (
         content
