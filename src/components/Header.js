@@ -10,7 +10,6 @@ import {
 import "../App.css";
 import { useTransition, animated } from "react-spring";
 import { NavLink } from "react-router-dom";
-import Product from "../Views/Product";
 
 // function Mount() {
 //   const [show, set] = useState(false);

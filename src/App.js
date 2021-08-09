@@ -5,9 +5,8 @@ import Homepage from "./components/Homepage";
 // import Nav from "./components/Nav";
 import { Switch } from "react-router-dom";
 import { Route } from "react-router-dom";
-import About from "./components/About";
-import { useState, useEffect } from "react";
-import axios from "axios";
+// import About from "./components/About";
+
 import Product from "./Views/Product";
 import MyProduct from "./components/MyProduct";
 
