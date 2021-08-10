@@ -46,9 +46,9 @@ const MyProduct = () => {
   console.log(product.data);
 
   return (
-    <div className=" flex flex-wrap min-h-screen items-center w-11/12 mt-10 lg:w-10/12 mx-auto justify-center">
+    <div className=" flex flex-wrap min-h-screen items-center mx-auto w-11/12 sm:w-10/12 mt-10 lg:w-10/12  justify-center">
       {product.data ? (
-        <div className="rounded-lg overflow-hidden mx-2 sm:w-1/3 lg:w-4/12 w-6/12  mb-4 shadow-2xl">
+        <div className="rounded-lg overflow-hidden mx-2 w-10/12 md:w-6/12  mb-4 shadow-2xl">
           <img
             className="w-full"
             src={product.data.images[0].imageUrl}

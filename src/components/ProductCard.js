@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const ProductCard = (props) => {
   return (
-    <div className="rounded-lg overflow-hidden mx-2  sm:w-1/3 lg:w-3/12 w-6/12  mb-4 shadow-2xl">
+    <div className="rounded-lg overflow-hidden mx-2 sm:w-1/3 lg:w-3/12 w-10/12  mb-4 shadow-2xl">
       <img
         className="w-full"
         src={props.product.data[0].images[0].imageUrl}
