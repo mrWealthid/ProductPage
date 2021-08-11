@@ -11,21 +11,7 @@ import "../App.css";
 import { useTransition, animated } from "react-spring";
 import { NavLink } from "react-router-dom";
 
-// function Mount() {
-//   const [show, set] = useState(false);
-//   const transitions = useTransition(show, {
-//     from: { opacity: 0 },
-//     enter: { opacity: 1 },
-//     leave: { opacity: 0 },
-//     reverse: show,
-//     delay: 200,
 
-//     onRest: () => set(!show),
-//   });
-//   return transitions(
-//     (styles, item) => item && <animated.div style={styles}>✌️</animated.div>
-//   );
-// }
 
 const Header = () => {
   const [menu, setMenu] = useState(false);
@@ -71,7 +57,7 @@ const Header = () => {
 
   return (
     <div className="flex p-6 items-center justify-between border-b">
-      <div className="font-Poppins ">
+      <div className="font-Poppins">
         <h1 className=" font-bold">Wealth</h1>
         <p className="hidden md:block text-xs">
           Built with React Router, Tailwind, axios, mock Api, UseParams Hooks &
